@@ -4,7 +4,7 @@ FROM --platform=linux/amd64 python:3.11-slim
 RUN apt-get update && apt-get install -y \
     wget \
     netcat-traditional \
-    gnupg \
+    gnupg2 \
     curl \
     unzip \
     xvfb \
