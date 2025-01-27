@@ -1,0 +1,122 @@
+# Browser Automation AI Assistant System Prompt
+
+## Project Overview
+This is a Python-based browser automation framework with AI integration. Key components:
+
+1. WebUI (Gradio interface)
+2. Browser control (Playwright)
+3. AI agent system (DeepSeek R1 integration)
+4. Docker deployment
+5. Customizable browser contexts
+
+## Core Architecture Components
+
+### 1. Browser Control System
+- Playwright-based browser automation
+- Custom browser contexts with anti-detection measures
+- Headless/headed mode support
+- Persistent sessions
+- Screen recording and tracing
+
+### 2. AI Agent System
+- DeepSeek R1 integration (src/utils/llm.py)
+- Customizable prompts (src/agent/custom_prompts.py)
+- Action controller system (src/controller/custom_controller.py)
+- State management (src/utils/agent_state.py)
+- Vision capabilities integration
+
+### 3. Web Interface
+- Gradio-based UI (webui.py)
+- Theme support (Ocean, Citrus, etc.)
+- Real-time browser preview
+- Agent configuration management
+- Result visualization
+
+### 4. Deployment
+- Docker compose setup
+- noVNC integration
+- Chrome persistent sessions
+- Environment variable configuration
+
+## Key Implementation Patterns
+
+1. Async-first architecture
+2. Context managers for browser sessions
+3. Custom Playwright extensions (src/browser/custom_*.py)
+4. Stateful agent operations (AgentState class)
+5. LLM abstraction layer with multiple providers
+
+## Development Priorities
+
+1. Maintain async/await pattern for all browser operations
+2. Use Playwright 1.42+ API conventions
+3. Follow Gradio 4.0+ component patterns
+4. Keep sensitive configuration in .env
+5. Support both direct and Docker deployments
+
+## Critical Implementation Details
+
+1. Browser Context Security
+- Anti-detection scripts in custom_context.py
+- Cookie management
+- User agent randomization
+- Headless mode detection bypass
+
+2. AI Agent Operations
+- State preservation between steps
+- Error recovery mechanisms
+- Vision pipeline integration
+- Action validation system
+
+3. Performance Considerations
+- Browser instance pooling
+- Parallel execution contexts
+- Trace/recording storage optimization
+- LLM response caching
+
+## Code Generation Rules
+
+1. Use Python 3.11+ syntax
+2. Follow Playwright's async patterns
+3. Type hints for all function signatures
+4. Gradio components must use latest UI patterns
+5. Document all environment variables
+6. Include playwright install in setup
+7. Use pathlib for file operations
+8. Implement proper cleanup in context managers
+
+## Testing Requirements
+
+1. Mock browser interactions
+2. Test all custom actions
+3. Verify LLM response handling
+4. Validate Docker build process
+5. Check cross-platform compatibility
+6. Performance test with multiple agents
+
+## Documentation Standards
+
+1. Keep README.md updated with features
+2. Document all agent configuration options
+3. Maintain Docker deployment guide
+4. Keep testing instructions current
+5. Document browser security settings
+6. Update LLM integration docs
+
+## Security Constraints
+
+1. Never expose VNC without password
+2. Sanitize all LLM inputs
+3. Validate file paths in config
+4. Isolate browser processes
+5. Secure cookie storage
+6. Encrypt sensitive traces
+
+## Error Handling
+
+1. Implement Playwright recovery patterns
+2. LLM fallback mechanisms
+3. State snapshot/restore
+4. Comprehensive logging
+5. User-friendly error reporting
+6. Automatic trace collection on failure
